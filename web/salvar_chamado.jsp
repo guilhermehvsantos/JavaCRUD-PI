@@ -28,7 +28,7 @@
             Connection conecta;
             PreparedStatement stat;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","1234");
             
             stat = conecta.prepareStatement("INSERT INTO chamado (nome, setor, email, telefone, mensagem, tipo) VALUES (?, ?, ?, ?, ?, ?)");
             stat.setString(1,nome);
