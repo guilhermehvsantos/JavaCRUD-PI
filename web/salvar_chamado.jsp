@@ -14,7 +14,7 @@
     </head>
     <body>
         <%
-            //Recebendo dados do formul·rio
+            //Recebendo dados do formul√°rio
             String nome, setor, email, telefone, tipo, mensagem;
             nome = request.getParameter("nome");
             setor = request.getParameter("setor");
@@ -28,8 +28,7 @@
             Connection conecta;
             PreparedStatement stat;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url="jdbc:mysql://mysqldb-ghvs.mysql.database.azure.com:3306/bancoaulapi?useSSL=true";
-                conecta = DriverManager.getConnection(url, "guilhermehvsroot", "$eN@C3229");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
             
             stat = conecta.prepareStatement("INSERT INTO chamado (nome, setor, email, telefone, mensagem, tipo) VALUES (?, ?, ?, ?, ?, ?)");
             stat.setString(1,nome);
@@ -43,7 +42,7 @@
             } catch (Exception erro) {
             String menErro = erro.getMessage();
             if(menErro.contains("Duplicate entry")) {
-                out.print("<p style='color:#1a73e8; font-size:20px font-weight: bold;'>Chamado j· foi registrado</p>");
+                out.print("<p style='color:#1a73e8; font-size:20px font-weight: bold;'>Chamado j√° foi registrado</p>");
             } else {
             out.print("<p style='color:red; font-size:20px'>Mensagem de erro: " + erro.getMessage() +"</p>");
             }
