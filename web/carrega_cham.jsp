@@ -22,8 +22,7 @@
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conecta;
-                String url="jdbc:mysql://mysqldb-ghvs.mysql.database.azure.com:3306/bancoaulapi?useSSL=true";
-                conecta = DriverManager.getConnection(url, "guilhermehvsroot", "$eN@C3229");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
 
                 //Busca no banco de dados
                 PreparedStatement stat;
@@ -33,12 +32,12 @@
 
                 //Verifica se existe o chamado
                 if (!resultado.next()) {
-                    out.print("<p style='color:red; font-size:30px; font-weight: bold;'>Não existe chamado com esse código</p>");
+                    out.print("<p style='color:red; font-size:30px; font-weight: bold;'>NÃ£o existe chamado com esse cÃ³digo</p>");
                 } else {
         %>
         <form method="post" action="alterar_chamado.jsp">
             <h3 style="margin-top: 0;">
-                Código:
+                CÃ³digo:
                 <input type="number" name="codigo" id="codigo" value="<%= resultado.getString("codigo") %>" readonly>
             </h3>
                 <label for="nome">Nome:</label>
@@ -50,8 +49,8 @@
                     <option value="<%=resultado.getString("setor")%>"><%=resultado.getString("setor")%></option>
                     <option value="RH">Recursos Humanos</option>
                     <option value="Financeiro">Financeiro</option>
-                    <option value="TI">Tecnologia da Informação</option>
-                    <option value="Operacoes">Operações</option>
+                    <option value="TI">Tecnologia da InformaÃ§Ã£o</option>
+                    <option value="Operacoes">OperaÃ§Ãµes</option>
                     <option value="Marketing">Marketing</option>
                 </select>
             </p>
@@ -81,7 +80,7 @@
 
             </fieldset>
             <p style="margin-bottom: 0;">
-                <input type="submit" value="Salvar Alterações" />
+                <input type="submit" value="Salvar AlteraÃ§Ãµes" />
             </p>
 
         </form>
