@@ -22,8 +22,7 @@
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conecta;
-                String url="jdbc:mysql://mysqldb-ghvs.mysql.database.azure.com:3306/bancoaulapi?useSSL=true";
-                conecta = DriverManager.getConnection(url, "guilhermehvsroot", "$eN@C3229");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
 
                 //Excluindo do banco de dados
                 PreparedStatement stat;
@@ -32,9 +31,9 @@
                 int resultado = stat.executeUpdate();
                 //Verifica se foi excluido ou nao
                 if(resultado == 0) {
-                    out.print("<p style='color:red; font-size:30px; font-weight: bold; margin: 20px;'>Não existe chamado com esse código</p>");
+                    out.print("<p style='color:red; font-size:30px; font-weight: bold; margin: 20px;'>NÃ£o existe chamado com esse cÃ³digo</p>");
                 } else {
-                    out.print("<p style='color:#1a73e8; font-size:20px margin: 20px;'>O chamado de código " + codigo + " foi excluido com sucesso</p>");
+                    out.print("<p style='color:#1a73e8; font-size:20px margin: 20px;'>O chamado de cÃ³digo " + codigo + " foi excluido com sucesso</p>");
                 }
             } catch (Exception erro) {
                 String menErro = erro.getMessage();
