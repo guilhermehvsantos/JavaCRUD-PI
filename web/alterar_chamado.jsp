@@ -11,7 +11,7 @@
     </head>
     <body>
         <%
-             //Recebendo dados ALTERADOS carrege_cham.jsp do formulário
+             //Recebendo dados ALTERADOS carrege_cham.jsp do formulÃ¡rio
             String nome, setor, email, telefone, tipo, mensagem;
             int codigo = Integer.parseInt(request.getParameter("codigo"));
             nome = request.getParameter("nome");
@@ -26,7 +26,7 @@
             Connection conecta;
             PreparedStatement stat;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","1234");
             
             stat = conecta.prepareStatement("UPDATE chamado SET nome=?, setor=?, email=?, telefone=?, mensagem=?, tipo=? WHERE codigo=?");
             stat.setString(1,nome);
