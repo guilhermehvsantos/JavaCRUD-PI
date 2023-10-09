@@ -22,8 +22,7 @@
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conecta;
-                String url="jdbc:mysql://mysqldb-ghvs.mysql.database.azure.com:3306/bancoaulapi?useSSL=true";
-                conecta = DriverManager.getConnection(url, "guilhermehvsroot", "$eN@C3229");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
 
                 //Excluindo do banco de dados
                 PreparedStatement stat;
