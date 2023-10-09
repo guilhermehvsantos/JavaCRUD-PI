@@ -19,8 +19,7 @@
                 Connection conecta;
                 PreparedStatement stat;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                String url="jdbc:mysql://mysqldb-ghvs.mysql.database.azure.com:3306/bancoaulapi?useSSL=true";
-                conecta = DriverManager.getConnection(url, "guilhermehvsroot", "$eN@C3229");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","1234");
                 //Listar chamados
                 stat = conecta.prepareStatement("SELECT * FROM chamado Order by codigo");
                 ResultSet resultado = stat.executeQuery();
