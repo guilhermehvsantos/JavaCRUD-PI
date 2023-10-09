@@ -22,7 +22,7 @@
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conecta;
-                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","$en@c!32");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoaulapi","root","1234");
 
                 //Excluindo do banco de dados
                 PreparedStatement stat;
